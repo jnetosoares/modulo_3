@@ -1,0 +1,15 @@
+{% extends 'votacao/base.html' %}
+{% block content %}
+
+{% if lista_recentes %}
+   <ul>
+   {% for pergunta in lista_recentes %}
+       <div class="post">
+            <li><a href="/votacao/{{ pergunta.id }}/">{{ pergunta.pergunta_texto }}</a></li>
+       </div>
+   {% endfor %}
+   </ul>
+   {% else %}
+       <p>Não votação disponível.</p>
+{% endif %}
+{% endblock %}

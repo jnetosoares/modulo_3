@@ -1,0 +1,12 @@
+{% extends 'votacao/base.html' %}
+{% block content %}
+<form action="">
+<h1>{{ pergunta.pergunta_texto }}</h1>
+
+{% for resposta in pergunta.resposta_set.all %}
+    <input type="radio" name="resposta" value="{{ resposta.id }}"> {{ resposta.resposta_texto }}<br>
+{% endfor %}
+<input type="submit" name="votar">
+</form>
+
+{% endblock %}
